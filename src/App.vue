@@ -1,32 +1,93 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
-  </div>
+  <header class="container-fluid">
+    <div class="row">
+      <div class="col-lg-2 col-4 pt-2">
+        <div class="side">
+          <div class="comps">
+            <img class="img-fluid pb-4" src="./assets/index.png" alt="logo" />
+            <p
+              v-for="(link, i) in links"
+              :key="i"
+              @click="component = link.comp"
+            >
+              {{ link.name }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg col pt-2">
+        <component :is="component" />
+      </div>
+    </div>
+  </header>
 </template>
 
+<script>
+// imports
+import TheWarnings from "@/components/TheWarnings.vue";
+import TheAccordion from "./components/TheAccordion.vue";
+import ThePopup from "./components/ThePopup.vue";
+export default {
+  components: {
+    TheWarnings,
+    TheAccordion,
+    ThePopup,
+  },
+  data() {
+    return {
+      component: "TheWarnings",
+      links: [
+        {
+          name: "التنبيهات",
+          comp: "TheWarnings",
+        },
+        {
+          name: "الأكورديون",
+          comp: "TheAccordion",
+        },
+        {
+          name: "النوافذ المنبثقة",
+          comp: "ThePopup",
+        },
+      ],
+    };
+  },
+  methods: {},
+};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  /* global */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Almarai", sans-serif;
 }
-
-nav {
-  padding: 30px;
+/* scroll */
+body{
+  overflow-x: hidden;
 }
-
-nav a {
+/* colors */
+:root{
+  --lightGreen: #4AAA6E;
+  --haedingColor: #02363D;
+}
+/* heading color */
+h2{
+    color: var(--haedingColor);
+}
+.col-lg-2 {
+  background: #faf9f4;
+}
+.side p,
+img {
+  padding: 0.5rem;
+  color: #02363d;
   font-weight: bold;
-  color: #2c3e50;
+  cursor: pointer;
 }
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.comps {
+  min-height: 100vh;
 }
 </style>
