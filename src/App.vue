@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="col-lg col pt-2">
-        <component :is="component" />
+        <component :is="component" icon="xxx" />
       </div>
     </div>
   </header>
@@ -52,40 +52,33 @@ export default {
       ],
     };
   },
-  methods: {},
 };
 </script>
 
-<style>
-  /* global */
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Almarai", sans-serif;
-}
-/* scroll */
-body{
-  overflow-x: hidden;
-}
-/* colors */
-:root{
-  --lightGreen: #4AAA6E;
-  --haedingColor: #02363D;
-}
+<style lang="scss">
+/* imports */
+@import "./assets/styles/_base.scss";
+@import "./assets/styles/_colors.scss";
+
 /* heading color */
-h2{
-    color: var(--haedingColor);
+h2 {
+  color: $headingColor;
 }
-.col-lg-2 {
-  background: #faf9f4;
-}
-.side p,
-img {
-  padding: 0.5rem;
-  color: #02363d;
-  font-weight: bold;
-  cursor: pointer;
+.container-fluid {
+  .row {
+    .col-lg-2 {
+      background: #faf9f4;
+      .side {
+        p,
+        img {
+          padding: 0.5rem;
+          color: $headingColor;
+          font-weight: bold;
+          cursor: pointer;
+        }
+      }
+    }
+  }
 }
 .comps {
   min-height: 100vh;
