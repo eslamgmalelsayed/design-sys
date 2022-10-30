@@ -1,0 +1,76 @@
+
+// success class
+.SuccessWarningrClass {
+  max-width: 1106px;
+  min-height: 85px;
+  height: fit-content;
+  overflow-wrap: anywhere;
+  border-right: 5px solid $lightGreen;
+  .row {
+    .circle {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid $lightGreen;
+      text-align: center;
+      line-height: 2.5rem;
+      color: $lightGreen;
+    }
+    p {
+      color: $lightGreen;
+    }
+    span {
+      color: $headingColor;
+    }
+  }
+}
+// danger class
+.DangerWarningClass {
+    max-width: 1106px;
+    min-height: 85px;
+    height: fit-content;
+    overflow-wrap: anywhere;
+    border-right: 5px solid red;
+    .row {
+      .circle {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        border: 2px solid red;
+        text-align: center;
+        line-height: 2.5rem;
+        color: red;
+      }
+      p {
+        color: red;
+      }
+      span {
+        color: $headingColor;
+      }
+    }
+  }
+  // info class
+.InfoWarningClass {
+  max-width: 1106px;
+  min-height: 85px;
+  height: fit-content;
+  overflow-wrap: anywhere;
+  border-right: 5px solid blue;
+  .row {
+    .circle {
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      border: 2px solid blue;
+      text-align: center;
+      line-height: 2.5rem;
+      color: blue;
+    }
+    p {
+      color: blue;
+    }
+    span {
+      color: $headingColor;
+    }
+  }
+}
