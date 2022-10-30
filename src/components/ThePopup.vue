@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2 class="fw-bold py-3">المنبثقة</h2>
+    <h2 class="fw-bold py-3">النوافذ المنبثقة</h2>
   </div>
 </template>
 
